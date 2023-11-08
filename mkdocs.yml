@@ -1,0 +1,39 @@
+site_name: Hiper Docs
+repo_url: https://github.com/THUAI-ssast/hiper-docs
+
+nav:
+- 首页: index.zh.md
+- 开发者文档:
+  - 开发环境搭建: dev/dev-env-setup.zh.md
+  - 架构: dev/arch.zh.md
+  - 后端 - Web: dev/web.zh.md
+  - 后端 - Worker: dev/worker.zh.md
+
+theme:
+  name: material
+
+markdown_extensions:
+- admonition
+- pymdownx.details
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+- search
+- i18n:
+    docs_structure: suffix
+    languages:
+    - locale: zh
+      default: true
+      name: 中文
+    - locale: en
+      name: English
+      nav_translations:
+        首页: Home
+        开发者文档: Developer Docs
+        开发环境搭建: Dev Env Setup
+        架构: Architecture
+        后端 - Web: Backend - Web
+        后端 - Worker: Backend - Worker
