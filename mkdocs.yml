@@ -1,5 +1,6 @@
 site_name: Hiper Docs
 repo_url: https://github.com/THUAI-ssast/hiper-docs
+edit_uri: edit/main/docs/
 
 nav:
 - 首页: index.zh.md
@@ -11,6 +12,9 @@ nav:
 
 theme:
   name: material
+  features:
+  - content.action.view
+  - content.action.edit
 
 markdown_extensions:
 - admonition
@@ -20,6 +24,8 @@ markdown_extensions:
     - name: mermaid
       class: mermaid
       format: !!python/name:pymdownx.superfences.fence_code_format
+- pymdownx.tabbed:
+    alternate_style: true
 plugins:
 - search
 - i18n:
