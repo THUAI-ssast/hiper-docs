@@ -10,6 +10,9 @@ nav:
   - 架构: dev/arch.zh.md
   - 后端 - Web: dev/web.zh.md
   - 后端 - Worker: dev/worker.zh.md
+- 用户文档:
+  - 局部管理员:
+    - 赛事脚本: user/local-admin/contest-script.zh.md
 
 theme:
   name: material
@@ -45,3 +48,6 @@ plugins:
         架构: Architecture
         后端 - Web: Backend - Web
         后端 - Worker: Backend - Worker
+        用户文档: User Docs
+        局部管理员: Local Admin
+        赛事脚本: Contest Script

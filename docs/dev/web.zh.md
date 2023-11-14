@@ -31,6 +31,17 @@ A --> M[only for super admin]
 
 ## 提供给赛事脚本的API
 
+[赛事脚本API](/user/local-admin/contest-script.md)
+
+若赛事管理员提交了有问题的赛事脚本，则可能导致一些破坏性结果。需尽可能降低这一风险。
+
+但仍相信赛事管理员不会故意提交有问题的赛事脚本，因此不轻易采取强制的限制措施。
+
+可能的破坏性结果：
+
+1. 创建了大量无意义的对局，挤占了其他赛事的评测资源。
+2. 执行无意义逻辑占用计算资源。
+
 ## 内部实现
 
 源码目录：[web](https://github.com/THUAI-ssast/hiper-backend/tree/main/web)
@@ -98,7 +109,7 @@ Apifox 可从数据结构（具体有 请求参数、返回响应、数据模型
 
 技术选型：
 
-- [github.com/dop251/goja](https://github.com/dop251/goja)
+- [github.com/dop251/goja](https://github.com/dop251/goja). 功能挺全，性能也不错。
 - [github.com/dop251/goja_nodejs](https://github.com/dop251/goja_nodejs)
 
 ### Config
