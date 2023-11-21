@@ -14,6 +14,12 @@
 
 引入了 [goja_nodejs](https://github.com/dop251/goja_nodejs) 中的 `eventloop`，提供 `setTimeout`、`setInterval` 等函数。
 
+## 简单示例
+
+```js
+
+```
+
 ## 可调用的函数、变量等
 
 可调用的变量与函数，为了后续新增功能时不破坏兼容性，都封装在 `hiper` 对象中。
@@ -25,12 +31,12 @@
  * @property {string} username - 选手的用户名。
  * @property {number} assignedAiId - 选手的出战 AI 的 ID。
  * @property {number} points - 选手积分，用于排名。
- * @property {string} performance - 选手的表现描述，由赛事脚本自行定义。
+ * @property {string} performance - 选手的表现描述，具体格式由赛事脚本自定义。可在排行榜中展示。
  * @property {boolean} publicMatchEnabled - 能否参与公开对局，即是否尚未被淘汰。
  */
 ```
 
-## 基本函数
+### 基本函数
 
 ```js
 /**
@@ -58,18 +64,12 @@ function getContestantsByRanking(filter = "survived")
  * 修改选手信息
  * 
  * @param {Contestant} contestant - 要修改的选手。
- * @param {Object} body - 要修改的内容。允许填写的字段有：score: number、performance: string、publicMatchEnabled: boolean, assignAiEnabled: boolean。
+ * @param {Object} body - 要修改的内容。允许填写的字段有：score: number, performance: string, publicMatchEnabled: boolean, assignAiEnabled: boolean。
  */
 function updateContestant(contestant, body)
 ```
 
-### 其他
-
-`setPendingLimit`：设置一场赛事待评测的公开对局的数量上限（不能超过1000）。发起对局时会检查是否超过上限，若超过，则认为脚本写错了，杀脚本、禁用公开对局&赛事脚本环境，并删除所有待评测的对局。默认上限即为1000。
-
-```js
-setPendingLimit(limit)
-```
+### 辅助函数
 
 ## hook函数
 
@@ -101,5 +101,3 @@ function onAiAssigned(contestant)
  */
 function onMatchFinished(players, tags, replay)
 ```
-
-## 示例
