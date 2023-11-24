@@ -87,23 +87,14 @@ graph TD
     M --> MQ[Message Queue]
 ```
 
-- `API` 与 `Contest Script` 部分提供「对外的 API」。
+- `API` 与 `Contest Script` 部分提供「对外的 API」，其中 `Contest Script` 是将 Go 代码封装为 JavaScript 代码，供赛事脚本使用。
+    - [`package api`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/api)
+    - [`package contestscript`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/contestscript)
 - `Service` 提供「相对干净的业务逻辑」。粒度拆分到足够细，方便组合使用。
     - 遵循 Go 项目的惯例，将 service 拆散平铺到其他目录，合理归类，于是并不需要单独的 service目录。
-- `Model` 直接和底层存储系统交互，定义数据模型、提供访问数据的接口，供业务逻辑使用，使 `Service` 与底层存储系统解耦（如不用管到底要不要缓存），也使得 `Service` 更加干净。
-    - 因此，这部分的接口设计是「业务驱动」的——业务需要什么就封装出什么。
-
-### Model
-
-参考技术选型：
-
-- [github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
-- [gorm.io/gorm](https://gorm.io)
-- [github.com/redis/go-redis](https://redis.uptrace.dev/zh/)
-    - If you are using Redis 6, install go-redis/v8.
-	- If you are using Redis 7, install go-redis/v9.
-
-Apifox 可从数据结构（具体有 请求参数、返回响应、数据模型）生成 Go 类型定义代码、SQL 语句，供复制粘贴参考。GORM 有一系列默认约定，可减少很多这方面的琐碎代码；并且支持嵌入结构体，与 Apifox 的数据模型设计相契合。
+    - 每块业务逻辑对应一个 package，如 [`package mail`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/mail)、[`package user`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/user)。
+- `Model` 解决数据存取、持久化、缓存等问题。提供访问数据的接口供业务逻辑使用，使 `Service` 与底层存储系统解耦（如不用管到底要不要缓存、存到数据库/Redis还是文件系统 等）。
+    - [`package model`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
 
 ### Contest Script
 
@@ -111,11 +102,5 @@ Apifox 可从数据结构（具体有 请求参数、返回响应、数据模型
 
 - [github.com/dop251/goja](https://github.com/dop251/goja). 功能挺全，性能也不错。
 - [github.com/dop251/goja_nodejs](https://github.com/dop251/goja_nodejs)
-
-### Config
-
-- 定死后一定不需要修改的，就不要配置。
-
-- [ ] `viper` 对配置热重载支持得很好。如果有的配置确有在运行时修改的合理需求，可以考虑满足。
 
 ### TODO: 其他重难点 Service 的实现思路分析（若值得记录）
