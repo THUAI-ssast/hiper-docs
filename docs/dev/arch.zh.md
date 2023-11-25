@@ -5,7 +5,7 @@
 ```mermaid
 graph TD
   subgraph Frontend
-    Brower
+    Browser
   end
   Frontend --> B
   subgraph Backend
@@ -47,7 +47,7 @@ Web:
 - Web Framework：`Gin`
 - Run JavaScript in Go: `Goja`
 
-Database：`MySQL`
+Database：`PostgreSQL`
 
 Cache：`Redis`
 
@@ -61,10 +61,10 @@ Message Queue：`Redis` (`Redis Stream`)
 
 Deploy：
 
-- `Docker`
+- `Docker`, `Docker Compose`
     - Containers：
         - web
-        - mysql
+        - db
         - redis
         - worker
 
