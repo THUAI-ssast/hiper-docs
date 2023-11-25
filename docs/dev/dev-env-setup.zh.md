@@ -26,19 +26,9 @@
 export GOPROXY=https://goproxy.cn,direct
 ```
 
-建议保存到 `~/.bashrc` 或 `~/.zshrc` 等文件中；Windows 也可在操作系统的环境变量中设置。
+建议保存到 `~/.bashrc` 或 `~/.zshrc` 等文件中。
 
-安装 VSCode（也可使用其他编辑器/IDE）：
-
-=== "Windows"
-
-    ```bash
-    winget add -i Microsoft.VisualStudioCode
-    ```
-
-在VSCode中搜索安装 `golang.go` 扩展。可能需要根据提示补充安装 Go 的工具链。也可直接用 VSCode 打开本项目，根据提示安装本项目需要的扩展。
-
-可根据自己的喜好调节 VSCode 的 设置，如 `Format on Save`。
+可直接用 VSCode 打开本项目，根据提示安装本项目需要的扩展。
 
 请确保提交的代码都用 `go fmt`, `go mod tidy` 等工具处理过（目前没有git hook）。
 
