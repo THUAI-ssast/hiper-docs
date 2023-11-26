@@ -12,6 +12,8 @@ nav:
   - 后端 - Worker: dev/worker.zh.md
 - 用户文档:
   - 局部管理员:
+    - 游戏逻辑: user/local-admin/game-logic.zh.md
+    - AI SDK: user/local-admin/ai-sdk.zh.md
     - 赛事脚本: user/local-admin/contest-script.zh.md
 
 theme:
@@ -50,4 +52,6 @@ plugins:
         后端 - Worker: Backend - Worker
         用户文档: User Docs
         局部管理员: Local Admin
+        游戏逻辑: Game Logic
+        AI SDK: AI SDK
         赛事脚本: Contest Script
