@@ -96,6 +96,24 @@ graph TD
 - `Model` 解决数据存取、持久化、缓存等问题。提供访问数据的接口供业务逻辑使用，使 `Service` 与底层存储系统解耦（如不用管到底要不要缓存、存到数据库/Redis还是文件系统 等）。
     - [`package model`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
 
+### Model
+
+数据模型间的关系粗略介绍如下：
+
+中心的表：user, game, contest。由于 game 内置一个赛事，故与 contest 有大部分字段是相同的，这部分抽象出 base contest。
+
+game/contest 含有 admins 字段，关联 user；含有 game_id 字段，关联 game。
+
+game/contest 之中还有一些实体需要建表：contestant; ai, match, sdk。它们都与 game/contest 有关联。在此基础上：
+
+contestant 记录 user 参加 game/contest 的情况，关联 user；记录 contestant 指定的出战 ai，关联 ai。
+
+ai, match, sdk 需编号，并决定在每个游戏/赛事中独立编号。
+
+ai 记录提交者，关联 user；记录 ai 所用的 sdk，关联 sdk。
+
+match 记录参加对局的多个 ai，关联 ai；记录参加对局的多个 contestant，关联 contestant。
+
 ### Contest Script
 
 技术选型：
