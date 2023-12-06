@@ -17,7 +17,7 @@
 ## 简单示例
 
 ```js
-
+初赛、复赛、决赛
 ```
 
 ## 可调用的函数、变量等
@@ -40,13 +40,19 @@
 
 ```js
 /**
- * 创建一个游戏对局，并执行相应的游戏逻辑。
+ * 创建一场对局。
  *
  * @param {Contestant[]} contestants - 参与对局的选手的数组，每个元素是一个选手对象。参与对局的 AI 将是他们此时的出战 AI，在 创建对局 与 对局开始 之间修改出战 AI 不会影响对局。
- * @param {string[]} [tags=[]] - 对局要打上的标签的数组，每个元素是一个字符串。
- * @param {Object} [extraInfo={}] - 传递给游戏逻辑的额外信息，将以 JSON 格式表示。
+ * @param {MatchOptions} [options={}] - 可选的额外配置。
+ 
  */
-function createMatch(contestants, tags = [], extraInfo = {})
+function createMatch(contestants, options = {})
+
+/**
+ * @typedef {Object} MatchOptions
+ * @property {string} [tag=""] - 对局要打上的标签
+ * @property {Object} [extraInfo={}] - 传递给游戏逻辑的额外信息，将以 JSON 格式表示。
+ */
 ```
 
 ```js
@@ -96,8 +102,8 @@ function onAiAssigned(contestant)
  * 一场对局完成时触发。
  * 
  * @param {Player[]} players
- * @param {string[]} tags - 对局的标签，在创建对局时指定。
+ * @param {string} tag - 对局的标签，在创建对局时指定。
  * @param {string} replay - 对局的回放，以 JSON 格式表示。
  */
-function onMatchFinished(players, tags, replay)
+function onMatchFinished(players, tag, replay)
 ```
