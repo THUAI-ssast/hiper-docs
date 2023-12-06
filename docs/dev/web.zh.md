@@ -112,7 +112,7 @@ ai, match, sdk 需编号，并决定在每个游戏/赛事中独立编号。
 
 ai 记录提交者，关联 user；记录 ai 所用的 sdk，关联 sdk。
 
-match 记录参加对局的多个 ai，关联 ai；记录参加对局的多个 contestant，关联 contestant。
+match 记录参加对局的多个 ai，关联 ai。
 
 ### Contest Script
 
