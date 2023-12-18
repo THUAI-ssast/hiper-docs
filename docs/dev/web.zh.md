@@ -114,6 +114,35 @@ ai 记录提交者，关联 user；记录 ai 所用的 sdk，关联 sdk。
 
 match 记录参加对局的多个 ai，关联 ai。
 
+文件系统中的目录结构粗略示例如下：
+
+```text
+var/hiper
+├── contests
+│   └── 1
+│       ├── ais
+│       ├── matches
+│       └── sdks
+└── games
+    └── 1
+        ├── ais
+        │   └── 1
+        │       └── here_are_src_of_ai
+        ├── game_logic
+        │   └── here_are_src_of_game_logic
+        ├── match_detail
+        │   └── here_are_match_detail_helper_files
+        ├── matches
+        │   └── 1
+        │       ├── player_0.log
+        │       ├── player_1.log
+        │       ├── player_2.log
+        │       └── replay.json
+        └── sdks
+            └── 1
+                └── here_are_src_of_sdk
+```
+
 ### Contest Script
 
 技术选型：
