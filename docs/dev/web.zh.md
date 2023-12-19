@@ -143,6 +143,42 @@ var/hiper
                 └── here_are_src_of_sdk
 ```
 
+每个文件内的代码的组织粗略如下：
+
+```go
+// ...
+
+// 数据模型定义
+
+// CRUD. 不一定需要全部实现，视情况而定。也可能有的实现了但不对外暴露，只供内部简化代码。
+
+// CRUD 之 Create
+// 可能会有 BeforeCreate、AfterCreate 等 hook
+func CreateXxx(obj *Xxx) error
+
+// CRUD 之 Read
+// 有时无 filter，返回所有（等效于 filter 填空接口）
+// fields 指定返回的字段. 可以不指定，则选择所有字段。
+// 有时还会有分页、排序等需求，此时参数过多，封装在结构体 QueryParams 里。
+func GetXxxs(filter map[string]interface{}, fields ...string) ([]Xxx, error)
+func GetXxxById(id int, fields ...string) (Xxx, error)
+func GetXxx(condition map[string]interface{}, fields ...string) (Xxx, error)
+// 有时会有一些特殊的查询需求
+func SearchXxxs(...) ([]Xxx, error)
+
+// CRUD 之 Update
+// 总体类似 Read
+func UpdateXxx...(...) error
+
+// CRUD 之 Delete
+// 总体类似 Read，但参数更简单
+func DeleteXxx...(...) error
+
+// associations CRUD
+
+// 一些特殊、非常规的操作
+```
+
 ### Contest Script
 
 技术选型：
