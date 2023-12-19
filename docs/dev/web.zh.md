@@ -129,7 +129,7 @@ match 记录参加对局的多个 ai，关联 ai。
 文件系统中的目录结构粗略示例如下：
 
 ```text
-var/hiper
+var/hiper/
 ├── contests
 │   └── 1
 │       ├── ais
@@ -138,12 +138,16 @@ var/hiper
 └── games
     └── 1
         ├── ais
-        │   └── 1
-        │       └── here_are_src_of_ai
+        │   ├── 1
+        │   │   ├── bin
+        │   │   └── src
+        │   └── 2
+        │       └── src
         ├── game_logic
-        │   └── here_are_src_of_game_logic
+        │   ├── bin
+        │   └── src
         ├── match_detail
-        │   └── here_are_match_detail_helper_files
+        │   └── helpers
         ├── matches
         │   └── 1
         │       ├── player_0.log
@@ -152,7 +156,7 @@ var/hiper
         │       └── replay.json
         └── sdks
             └── 1
-                └── here_are_src_of_sdk
+                └── src
 ```
 
 每个文件内的代码的组织粗略如下：
