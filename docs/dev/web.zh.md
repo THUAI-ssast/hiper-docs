@@ -96,6 +96,18 @@ graph TD
 - `Model` 解决数据存取、持久化、缓存等问题。提供访问数据的接口供业务逻辑使用，使 `Service` 与底层存储系统解耦（如不用管到底要不要缓存、存到数据库/Redis还是文件系统 等）。
     - [`package model`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
 
+技术选型：
+
+- web framework: [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin)
+- auth: [github.com/golang-jwt/jwt](https://github.com/golang-jwt/jwt)
+
+- config: [github.com/spf13/viper](https://github.com/spf13/viper)
+
+- orm: [gorm.io/gorm](https://gorm.io/gorm)
+- redis client: [github.com/go-redis/redis/v9](https://github.com/go-redis/redis/v9) 
+
+- postgres driver: [gorm.io/driver/postgres](https://gorm.io/driver/postgres)
+
 ### Model
 
 数据模型间的关系粗略介绍如下：
