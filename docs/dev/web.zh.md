@@ -63,8 +63,6 @@ graph TD
 
 Web 部分的架构图（以下纯小写表示 package 名）：
 
-<!-- TODO: 需根据最新思考重新绘制. 乃至据此建文件夹 -->
-
 ```mermaid
 graph TD
 Frontend --> api
@@ -102,7 +100,7 @@ end
 
 技术选型： [github.com/spf13/viper](https://github.com/spf13/viper)
 
-使用 `toml` 格式的配置文件，同时支持环境变量。
+使用 `toml` 格式的配置文件，同时支持环境变量。配置文件支持热重载。
 
 ### [api](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/api)
 
