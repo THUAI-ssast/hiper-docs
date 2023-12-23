@@ -33,7 +33,7 @@ graph LR
 
 源码目录：[web](https://github.com/THUAI-ssast/hiper-backend/tree/main/web)
 
-### 整体架构与技术选型
+### 整体架构
 
 从 [架构](arch.zh.md) 部分抄过来 Web 部分与其他部分的关联：
 
@@ -43,59 +43,96 @@ graph TD
     subgraph Web
 		B[Web API] --> C[Service]
 		D[Contest Script] --> C
+    C --> D
     end
     C --> MQ[Message Queue]
+    MQ --> C
     MQ --> Worker
+    Worker --> MQ
+    C --> Data
     subgraph Data
-		C --> Cache
-		C --> Database
-		C --> File[File System]
+		Cache
+		Database
+		File[File System]
     end
 ```
 
-增加一个 `model` 层，用于封装数据访问。形成如下结构：
+在 Web 中增加一些模块封装与外部的交互，使得 `Service` 只需关注业务逻辑。
+
+如 添加 `package model` 专门解决数据存取、持久化、缓存等问题。提供访问数据的接口供业务逻辑使用，使 `Service` 与底层存储系统解耦（如不用管到底要不要缓存、存到数据库/Redis还是文件系统 等）。
+
+Web 部分的架构图（以下纯小写表示 package 名）：
+
+<!-- TODO: 需根据最新思考重新绘制. 乃至据此建文件夹 -->
 
 ```mermaid
 graph TD
-  Frontend --> B
-    subgraph Web
-    B[API] --> C[Service]
-    D[Contest Script] --> C
-	C --> M[Model]
-    end
-    subgraph Data
-    	Cache
-    	Database
-    	File[File System]
-    end
-	M --> Cache
-	M --> Database
-	M --> File
-    M --> MQ[Message Queue]
+Frontend --> api
+
+subgraph Web
+api --> C[Service. 可进一步拆为其他packages]
+cs[contestscript] --> C
+C --> cs
+C --> m[model]
+C --> mq[mq. 有的用于发送消息, 有的用于接收消息]
+mq --> C
+end
+
+m --> Cache
+m --> Database
+m --> File
+mq --> MQ[Message Queue]
+
+subgraph Data
+  Cache
+  Database
+  File[File System]
+end
 ```
 
-- `API` 与 `Contest Script` 部分提供「对外的 API」，其中 `Contest Script` 是将 Go 代码封装为 JavaScript 代码，供赛事脚本使用。
-    - [`package api`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/api)
-    - [`package contestscript`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/contestscript)
-- `Service` 提供「相对干净的业务逻辑」。粒度拆分到足够细，方便组合使用。
-    - 遵循 Go 项目的惯例，将 service 拆散平铺到其他目录，合理归类，于是并不需要单独的 service目录。
-    - 每块业务逻辑对应一个 package，如 [`package mail`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/mail)、[`package user`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/user)。
-- `Model` 解决数据存取、持久化、缓存等问题。提供访问数据的接口供业务逻辑使用，使 `Service` 与底层存储系统解耦（如不用管到底要不要缓存、存到数据库/Redis还是文件系统 等）。
-    - [`package model`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
+`Service` 提供「相对干净的业务逻辑」。粒度拆分到足够细，方便组合使用。
+
+遵循 Go 项目的惯例，将 service 拆散平铺到其他目录，合理归类，于是并不需要单独的 service目录。
+
+每块业务逻辑对应一个 package，如 [`package mail`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/mail)、[`package user`](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/user)。
+
+### [config](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/config)
+
+`config` 读取配置文件，将配置信息提供给其他模块使用。
+
+技术选型： [github.com/spf13/viper](https://github.com/spf13/viper)
+
+使用 `toml` 格式的配置文件，同时支持环境变量。
+
+### [api](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/api)
+
+`api` 提供给前端的 API。
 
 技术选型：
 
 - web framework: [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin)
 - auth: [github.com/golang-jwt/jwt](https://github.com/golang-jwt/jwt)
 
-- config: [github.com/spf13/viper](https://github.com/spf13/viper)
+### [contestscript](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/contestscript)
 
+`contestscript` 运行赛事脚本。将 Go 代码封装为 JavaScript 代码，供赛事脚本使用。
+
+技术选型：
+
+- [github.com/dop251/goja](https://github.com/dop251/goja). 功能挺全，性能也不错。
+- [github.com/dop251/goja_nodejs](https://github.com/dop251/goja_nodejs)
+
+### [model](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
+
+`model` 解决数据存取、持久化、缓存等问题，提供访问数据的接口供业务逻辑使用。
+
+技术选型：
+
+- db: PostgreSQL
+- cache: Redis
 - orm: [gorm.io/gorm](https://gorm.io/gorm)
-- redis client: [github.com/go-redis/redis/v9](https://github.com/go-redis/redis/v9) 
-
 - postgres driver: [gorm.io/driver/postgres](https://gorm.io/driver/postgres)
-
-### [Model](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
+- redis client: [github.com/go-redis/redis/v9](https://github.com/go-redis/redis/v9) 
 
 数据模型设计的核心思路略如下：
 
@@ -149,11 +186,19 @@ var/hiper/
 // 一些特殊、非常规的操作
 ```
 
-### Contest Script
+### [mq](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/mq)
+
+`mq` 封装了消息队列的使用，提供发送、接收消息的接口供其他模块使用。
 
 技术选型：
 
-- [github.com/dop251/goja](https://github.com/dop251/goja). 功能挺全，性能也不错。
-- [github.com/dop251/goja_nodejs](https://github.com/dop251/goja_nodejs)
+- 消息队列：Redis Stream
+- client: [github.com/go-redis/redis/v9](https://github.com/go-redis/redis/v9) 
 
-### TODO: 其他重难点 Service 的实现思路分析（若值得记录）
+<!-- TODO -->
+
+### 其他 Service
+
+<!-- TODO -->
+
+`basecontest`, `contest`, `game`, `user` 等。

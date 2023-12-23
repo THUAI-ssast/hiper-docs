@@ -18,14 +18,18 @@ graph TD
       
     end
     MQ --> Worker
+
+    C --> Data
     subgraph Data
-    C --> Cache
-    C --> Database
-    C --> File[File System]
+    Cache
+    Database
+    File[File System]
     end
-    Worker --> Database
-    Worker --> File
+    Worker --> Data
   end
+  Worker --> MQ
+  MQ --> C
+  C --> D
 ```
 
 ## 技术选型
