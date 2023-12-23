@@ -108,55 +108,44 @@ graph TD
 
 - postgres driver: [gorm.io/driver/postgres](https://gorm.io/driver/postgres)
 
-### Model
+### [Model](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
 
-数据模型间的关系粗略介绍如下：
+数据模型设计的核心思路略如下：
 
-中心的表：user, game, contest。由于 game 内置一个赛事，故与 contest 有大部分字段是相同的，这部分抽象出 base contest。
+中心的表：`user`, `game`, `contest`。由于 `game` 内置一个赛事，故与 `contest` 有大部分字段是相同的，这部分抽象出 `base contest`，这样 `ai`、`match`、`sdk` 等都只需与 `base contest` 关联即可。
 
-game/contest 含有 admins 字段，关联 user；含有 game_id 字段，关联 game。
+约定 `game`, `contest` 的 ID 与它们对应的 `base contest` 的 ID 相同，这样无需额外的字段来关联它们。
 
-game/contest 之中还有一些实体需要建表：contestant; ai, match, sdk。它们都与 game/contest 有关联。在此基础上：
+`contestant` 记录 `user` 参加 `base contest` 的情况。
 
-contestant 记录 user 参加 game/contest 的情况，关联 user；记录 contestant 指定的出战 ai，关联 ai。
+`base contest` 内部有 `ai`, `match`, `sdk` 这些东西。这些东西需编号，使用全局编号即可。
 
-ai, match, sdk 需编号，并决定在每个游戏/赛事中独立编号。
-
-ai 记录提交者，关联 user；记录 ai 所用的 sdk，关联 sdk。
-
-match 记录参加对局的多个 ai，关联 ai。
+> 本打算在每场赛事中独立编号，但发现这样明显提高了实现难度，而且也没有什么必要，便还是只使用全局编号。
 
 文件系统中的目录结构粗略示例如下：
 
 ```text
 var/hiper/
-├── contests
+├── ais
+│   ├── 1
+│   │   ├── bin
+│   │   └── src
+│   └── 2
+│       └── src
+├── games
+│   └── 1 # 将来可能还会添加 match detail 的辅助文件等游戏资源，故 game logic 放在单独的目录
+│       └── game_logic
+│           ├── bin
+│           └── src
+├── matches
 │   └── 1
-│       ├── ais
-│       ├── matches
-│       └── sdks
-└── games
+│       ├── player_0.log
+│       ├── player_1.log
+│       ├── player_2.log
+│       └── replay.json
+└── sdks
     └── 1
-        ├── ais
-        │   ├── 1
-        │   │   ├── bin
-        │   │   └── src
-        │   └── 2
-        │       └── src
-        ├── game_logic
-        │   ├── bin
-        │   └── src
-        ├── match_detail
-        │   └── helpers
-        ├── matches
-        │   └── 1
-        │       ├── player_0.log
-        │       ├── player_1.log
-        │       ├── player_2.log
-        │       └── replay.json
-        └── sdks
-            └── 1
-                └── src
+        └── src
 ```
 
 每个文件内的代码的组织粗略如下：
@@ -166,29 +155,7 @@ var/hiper/
 
 // 数据模型定义
 
-// CRUD. 不一定需要全部实现，视情况而定。也可能有的实现了但不对外暴露，只供内部简化代码。
-
-// CRUD 之 Create
-// 可能会有 BeforeCreate、AfterCreate 等 hook
-func CreateXxx(obj *Xxx) error
-
-// CRUD 之 Read
-// 有时无 filter，返回所有（等效于 filter 填空接口）
-// fields 指定返回的字段. 可以不指定，则选择所有字段。
-// 有时还会有分页、排序等需求，此时参数过多，封装在结构体 QueryParams 里。
-func GetXxxs(filter map[string]interface{}, fields ...string) ([]Xxx, error)
-func GetXxxById(id int, fields ...string) (Xxx, error)
-func GetXxx(condition map[string]interface{}, fields ...string) (Xxx, error)
-// 有时会有一些特殊的查询需求
-func SearchXxxs(...) ([]Xxx, error)
-
-// CRUD 之 Update
-// 总体类似 Read
-func UpdateXxx...(...) error
-
-// CRUD 之 Delete
-// 总体类似 Read，但参数更简单
-func DeleteXxx...(...) error
+// 主体的 CRUD
 
 // associations CRUD
 
