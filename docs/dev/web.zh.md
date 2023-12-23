@@ -10,23 +10,10 @@
 
 API 设计思路概念图：
 
+<!-- TODO -->
+
 ```mermaid
 graph LR
-A([root]) --> B[user]
-A --> C[game]
-A --> D[independent contest]
-B --> E[before login]
-B --> F[other]
-C --> G[create]
-C --> H[general contest]
-C --> I[administer]
-D --> G
-D --> H
-D --> I
-D --> J[independent contest only: register & unregister]
-H --> K[administer]
-H --> L[other]
-A --> M[only for super admin]
 ```
 
 ## 提供给赛事脚本的API
