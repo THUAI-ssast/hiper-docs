@@ -32,6 +32,7 @@
  * @property {number} assignedAiId - 选手的出战 AI 的 ID。
  * @property {number} points - 选手积分，用于排名。
  * @property {string} performance - 选手的表现描述，具体格式由赛事脚本自定义。可在排行榜中展示。
+ * @property {boolean} assignAiEnabled - 能否修改出战 AI。
  * @property {boolean} publicMatchEnabled - 能否参与公开对局，即是否尚未被淘汰。
  */
 ```
@@ -59,7 +60,7 @@ function createMatch(contestants, options = {})
 /**
  * 按排名顺序获取选手列表。
  *
- * @param {string} [filter="survived"] - 筛选选手的条件。可选值为 "all"（所有选手）、"eliminated"（已淘汰选手）、"survived"（未淘汰选手）。 
+ * @param {string} [filter="survived"] - 筛选选手的条件。可选值为 "all"（所有选手）、"eliminated"（已淘汰选手）、"survived"（未淘汰选手）。 已淘汰选手 即 `publicMatchEnabled` 为 `false` 的选手。
  * @returns {Contestant[]} - 每个元素是一个选手对象，包含选手的一些信息。
  */
 function getContestantsByRanking(filter = "survived")
@@ -70,7 +71,7 @@ function getContestantsByRanking(filter = "survived")
  * 修改选手信息
  * 
  * @param {Contestant} contestant - 要修改的选手。
- * @param {Object} body - 要修改的内容。允许填写的字段有：score: number, performance: string, publicMatchEnabled: boolean, assignAiEnabled: boolean。
+ * @param {Object} body - 要修改的内容。见 Contestant 的定义；但当然 `username`, `assignedAiId` 这样的字段是不能修改的。
  */
 function updateContestant(contestant, body)
 ```
