@@ -71,7 +71,7 @@ function getContestantsByRanking(filter = "survived")
  * 修改选手信息
  * 
  * @param {Contestant} contestant - 要修改的选手。
- * @param {Object} body - 要修改的内容。可修改的内容为Perfomance，AssignAiEnabled，PublicMatchEnabled，Points。
+ * @param {Object} body - 要修改的内容。可修改的内容为perfomance，assignAiEnabled，publicMatchEnabled，points。
  */
 function updateContestant(contestant, body)
 ```
