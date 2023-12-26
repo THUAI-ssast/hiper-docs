@@ -103,7 +103,9 @@ TODO: 之后改用单独启动一个 Docker 供所有 worker 实例共用的方�
 
 构建好的镜像需要能持久化，以便重启后继续使用，也方便扩容创建多个 worker 实例。
 
-约定 docker image 的 tag 为 `<type>-<id>`，其中 `<type>` 为 `game` / `sdk` / `ai`，`<id>` 为它们在数据库中的 ID。
+约定 docker image 的 tag 为 `<type>-<id>-<build/run>`，其中 `<type>` 为 `game` / `ai`，`<id>` 为它们在数据库中的 ID。
+
+例：`game-1-build`、`ai-3-run`。
 
 ## docker run
 
