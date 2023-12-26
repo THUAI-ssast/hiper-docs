@@ -71,7 +71,7 @@ function getContestantsByRanking(filter = "survived")
  * 修改选手信息
  * 
  * @param {Contestant} contestant - 要修改的选手。
- * @param {Object} body - 要修改的内容。见 Contestant 的定义；但当然 `username`, `assignedAiId` 这样的字段是不能修改的。
+ * @param {Object} body - 要修改的内容。可修改的内容为Perfomance，AssignAiEnabled，PublicMatchEnabled，Points。
  */
 function updateContestant(contestant, body)
 ```
