@@ -88,7 +88,7 @@ subgraph Data
 end
 ```
 
-`Service` 提供「相对干净的业务逻辑」。粒度拆分到足够细，方便组合使用。
+`Service` 提供**「相对干净的业务逻辑」**（如不应依赖 `gin`）。粒度拆分到足够细，方便组合使用。
 
 遵循 Go 项目的惯例，将 service 拆散平铺到其他目录，合理归类，于是并不需要单独的 service目录。
 
@@ -120,6 +120,8 @@ end
 - [github.com/dop251/goja](https://github.com/dop251/goja). 功能挺全，性能也不错。
 - [github.com/dop251/goja_nodejs](https://github.com/dop251/goja_nodejs)
 
+维护2个 map，构成 赛事脚本运行环境 与 base contest 的双向映射。
+
 ### [model](https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model)
 
 `model` 解决数据存取、持久化、缓存等问题，提供访问数据的接口供业务逻辑使用。
@@ -144,20 +146,18 @@ end
 
 > 本打算在每场赛事中独立编号，但发现这样明显提高了实现难度，而且也没有什么必要，便还是只使用全局编号。
 
-文件系统中的目录结构粗略示例如下：
+文件系统中的目录结构粗略示例如下（`src` 表示文件名会被统一改为 `src`，但后缀名不变；源码可能会被构建产生可执行文件，这些文件放在哪由用户提交的 `Dockerfile` 决定）：
 
 ```text
 var/hiper/
 ├── ais
 │   ├── 1
-│   │   ├── bin
 │   │   └── src
 │   └── 2
 │       └── src
 ├── games
-│   └── 1 # 将来可能还会添加 match detail 的辅助文件等游戏资源，故 game logic 放在单独的目录
+│   └── 1
 │       └── game_logic
-│           ├── bin
 │           └── src
 ├── matches
 │   └── 1
