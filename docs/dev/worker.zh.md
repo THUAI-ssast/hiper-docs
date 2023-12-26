@@ -61,6 +61,10 @@ Worker 从消息队列中获取任务。
 
     暂停、恢复 可能可以使用 Docker 的 pause/unpause 功能来实现。
 
+    ---
+
+    不过，问题1 和 问题2 在每个任务都执行得足够快的情况其实都不是问题。
+
 ## Docker in Docker
 
 本项目需要两层 Docker：第一层 Docker 运行在 host，用于部署本项目；第二层 Docker 运行在本项目内，用于运行用户程序。相关术语叫 "Docker in Docker"(dind)。
@@ -88,9 +92,9 @@ Worker 从消息队列中获取任务。
 
     直接用 host 的 Docker 的话，主要是隔离性的问题，会污染 host 的 Docker 环境。
 
-- [ ] 方案？
-
 暂且直接用 host 的 Docker；之后改用单独启动一个 Docker 供所有 worker 实例共用的方案。
+
+TODO: 之后改用单独启动一个 Docker 供所有 worker 实例共用的方案。
 
 > [Introductory demo for the Sysbox container runtime](https://asciinema.org/a/kkTmOxl8DhEZiM2fLZNFlYzbo)
 > [Sysbox Quick Start Guide](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/README.md)
@@ -102,6 +106,14 @@ Worker 从消息队列中获取任务。
 约定 docker image 的 tag 为 `<type>-<id>`，其中 `<type>` 为 `game` / `sdk` / `ai`，`<id>` 为它们在数据库中的 ID。
 
 ## docker run
+
+需要限制以下几个方面，以确保安全性：
+
+- CPU、内存占用
+- 运行时间
+- 日志长度
+
+TODO: 编写具体的 command
 
 `docker run --rm -v <mount output path> ...`
 
