@@ -16,7 +16,7 @@ nav:
     - AI SDK: user/local-admin/ai-sdk.zh.md
     - 赛事脚本: user/local-admin/contest-script.zh.md
   - 普通用户:
-    - 手册: user/normal-user/manual.zh.md
+    - 手册: user/ordinary-user/manual.zh.md
 theme:
   name: material
   features:
