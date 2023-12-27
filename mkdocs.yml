@@ -9,6 +9,7 @@ nav:
   - 开发环境搭建: dev/dev-env-setup.zh.md
   - 架构: dev/arch.zh.md
   - 后端 - Web: dev/web.zh.md
+  - 消息队列: dev/mq.zh.md
   - 后端 - Worker: dev/worker.zh.md
 - 用户文档:
   - 局部管理员:
@@ -50,6 +51,7 @@ plugins:
         开发环境搭建: Dev Env Setup
         架构: Architecture
         后端 - Web: Backend - Web
+        消息队列: Message Queue
         后端 - Worker: Backend - Worker
         用户文档: User Docs
         局部管理员: Local Admin

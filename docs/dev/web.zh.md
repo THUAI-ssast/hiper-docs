@@ -193,20 +193,7 @@ var/hiper/
 - 消息队列：Redis Stream
 - client: [github.com/go-redis/redis/v9](https://github.com/go-redis/redis/v9) 
 
-发送的方式为：
-
-```mqsend
-model.Rdb.XAdd(ctx, &redis.XAddArgs{
-	Stream: msg.Topic,
-	MaxLen: 0,
-	Approx: true,
-	ID:     "*",
-	Values: []interface{}{"body", msg.Body, "type", msg.Type},
-})
-```
-
-
-<!-- TODO -->
+消息队列接口见 [消息队列](mq.md)。
 
 ### 其他 Service
 

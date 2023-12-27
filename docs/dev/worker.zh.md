@@ -10,13 +10,15 @@ worker 的工作流程：
 2. 修改状态信息，表示正在执行
 3. 获取任务所需信息
 4. 起容器，执行任务
-5. 等待任务完成，获取任务输出，保存与修改相关信息（含 在 `match_finished` 消息队列中发送消息，如果是 公开对局 的话）
+5. 等待任务完成，获取任务输出，保存与修改相关信息（含 在 `match_result` 消息队列中发送消息，如果是 公开对局 的话）
 6. 修改状态信息，表示执行完成
 7. ACK 消息，准备获取下一个任务
 
 ## 获取任务
 
 Worker 从消息队列中获取任务。
+
+<!-- TODO -->
 
 ### 任务调度
 
@@ -65,7 +67,7 @@ Worker 从消息队列中获取任务。
 
     不过，问题1 和 问题2 在每个任务都执行得足够快的情况其实都不是问题。
 
-分为 3 个优先级：用户触发的构建 > 用户触发的对局 > 赛事脚本触发的对局。它们分别对应 3 个消息队列：``
+分为 3 个优先级：用户触发的构建 > 用户触发的对局 > 赛事脚本触发的对局。它们分别对应 1 个消息队列。
 
 ## Docker in Docker
 
@@ -99,6 +101,7 @@ Worker 从消息队列中获取任务。
 TODO: 之后改用单独启动一个 Docker 供所有 worker 实例共用的方案。
 
 > [Introductory demo for the Sysbox container runtime](https://asciinema.org/a/kkTmOxl8DhEZiM2fLZNFlYzbo)
+>
 > [Sysbox Quick Start Guide](https://github.com/nestybox/sysbox/blob/master/docs/quickstart/README.md)
 
 ## docker build
@@ -109,7 +112,7 @@ TODO: 之后改用单独启动一个 Docker 供所有 worker 实例共用的方�
 
 `<hash>` 为构建镜像时使用的 Dockerfile 的 hash，用于判断是否需要重新构建镜像。
 
-例：`game-1-build-df1c930f5d049d445487b15d16c9763e`、`ai-3-run-aeceee35bfe1fa755fac895403db4da4`。
+例：`game-1-build-df1c930f5d049d445487b15d16c9763e`, `ai-3-run-aeceee35bfe1fa755fac895403db4da4`。
 
 ## docker run
 
