@@ -105,11 +105,11 @@ Worker 从消息队列中获取任务。
 
 构建好的镜像需要能持久化，以便重启后继续使用，也方便扩容创建多个 worker 实例。
 
-约定 docker image 的 tag 为 `<type>-<id>-<build/run>-<hash>`，其中 `<type>` 为 `game` / `ai`，`<id>` 为它们在数据库中的 ID。
+约定 docker image 的 tag 为 `<type>-<id>-<build/run>-<hash>`，其中 `<type>` 为 `game_logic` / `ai`，`<id>` 为它们在数据库中的 ID。
 
 `<hash>` 为构建镜像时使用的 Dockerfile 的 hash，用于判断是否需要重新构建镜像。
 
-例：`game-1-build-df1c930f5d049d445487b15d16c9763e`, `ai-3-run-aeceee35bfe1fa755fac895403db4da4`。
+例：`game_logic-1-build-df1c930f5d049d445487b15d16c9763e`, `ai-3-run-aeceee35bfe1fa755fac895403db4da4`。
 
 ## docker run
 
