@@ -40,10 +40,12 @@ Hiper 允许有不管怎样花里胡哨的游戏流程，只要最终的输出�
 
 - `create_player <container_name> <ai_index>`. 用某个参加对局的 AI 程序创建一个玩家。`container_name` 为玩家的容器名（游戏逻辑应自行保证容器名的唯一性，即「一场对局内」不能同时存在多个同名容器）。`ai_index` 为 AI 程序在 AI 列表中的下标（从 0 开始）。
 - `remove_player <container_name>`. 移除一个玩家。`container_name` 为玩家的容器名。
-- `end_match <end_info_json>`. 结束对局。`end_info_json` 为那些不写入文件的对局结束信息，如比分。
+- `end_match <end_info_json>`. 结束对局。
 
 ```json
-end_info_json = {
-    "scores": [0, 1, 2, 3] // 比分，按顺序给出参与对局的每个AI的分数，与输入的 AI列表 对应。
+// end_info_json
+{
+    "scores": [0, 1, 2, 3], // 比分，按顺序给出参与对局的每个AI的分数，与输入的 AI列表 对应。
+    "replay": {} // 回放数据
 }
 ```
