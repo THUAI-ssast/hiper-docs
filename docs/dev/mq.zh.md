@@ -50,5 +50,5 @@ XADD match_result * id <match_id> replay <replay>
 Read message:
 
 ```bash
-XREAD BLOCK 0 STREAMS match_result >
+XREAD BLOCK 0 STREAMS match_result $
 ```
