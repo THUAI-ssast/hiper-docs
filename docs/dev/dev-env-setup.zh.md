@@ -2,8 +2,6 @@
 
 > 开发环境搭建还算简单，故暂不使用 devcontainer。
 
-## 前端
-
 ## 后端 - Web
 
 安装 Go：
@@ -33,3 +31,5 @@ export GOPROXY=https://goproxy.cn,direct
 请确保提交的代码都用 `go fmt`, `go mod tidy` 等工具处理过（目前没有git hook）。
 
 ## 后端 - Worker
+
+使用的也是 Go，故同上。

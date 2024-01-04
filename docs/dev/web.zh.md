@@ -6,16 +6,6 @@
 
 使用 `Apifox` 实现 编写与部署API文档、调试API、简易 Mock、生成类型定义代码。
 
-- [ ] `Apifox` 对 测试API 的支持也还可以，不过要不要用还不一定。
-
-API 设计思路概念图：
-
-<!-- TODO -->
-
-```mermaid
-graph LR
-```
-
 ## 提供给赛事脚本的API
 
 [赛事脚本API](/user/local-admin/contest-script.md)
@@ -194,9 +184,3 @@ var/hiper/
 - client: [github.com/go-redis/redis/v9](https://github.com/go-redis/redis/v9) 
 
 消息队列接口见 [消息队列](mq.md)。
-
-### 其他 Service
-
-<!-- TODO -->
-
-`basecontest`, `contest`, `game`, `user` 等。
