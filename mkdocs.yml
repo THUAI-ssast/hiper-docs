@@ -5,6 +5,7 @@ site_url: https://thuai-ssast.github.io/hiper-docs/
 
 nav:
 - 首页: index.zh.md
+- 需求文档: requirement.zh.md
 - 开发者文档:
   - 开发环境搭建: dev/dev-env-setup.zh.md
   - 架构: dev/arch.zh.md
@@ -47,6 +48,7 @@ plugins:
       name: English
       nav_translations:
         首页: Home
+        需求文档: Requirement Docs
         开发者文档: Developer Docs
         开发环境搭建: Dev Env Setup
         架构: Architecture
