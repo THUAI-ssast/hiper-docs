@@ -29,7 +29,7 @@ Read message:
 # 若相应名字的 consumer 不存在，会自动在 group 中创建
 # BLOCK 0 表示永久阻塞，直到有消息到达
 # 使用 Docker 部署时，可考虑使用 $HOSTNAME 作为 consumer_name 以避免重名
-XREADGROUP GROUP worker_group <consumer_name> COUNT 1 BLOCK 0 STREAMS build manual_match auto_match >
+XREADGROUP GROUP worker_group <consumer_name> COUNT 1 BLOCK 0 STREAMS build manual_match auto_match > > >
 ```
 
 Ack message:
