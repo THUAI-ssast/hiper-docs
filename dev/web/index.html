@@ -1,0 +1,1111 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://thuai-ssast.github.io/hiper-docs/dev/web/">
+      
+      
+        <link rel="prev" href="../arch/">
+      
+      
+        <link rel="next" href="../mq/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>后端 - Web - Hiper Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Hiper Docs" class="md-header__button md-logo" aria-label="Hiper Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hiper Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              后端 - Web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/dev/web/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/THUAI-ssast/hiper-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Hiper Docs" class="md-nav__button md-logo" aria-label="Hiper Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hiper Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/THUAI-ssast/hiper-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    需求文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    开发者文档
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            开发者文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-env-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发环境搭建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    后端 - Web
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    后端 - Web
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      提供给前端的API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      提供给赛事脚本的API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      内部实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内部实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      整体架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      api
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contestscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      contestscript
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mq" class="md-nav__link">
+    <span class="md-ellipsis">
+      mq
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    消息队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    后端 - Worker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    用户文档
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            用户文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    局部管理员
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            局部管理员
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/local-admin/game-logic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    游戏逻辑
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/local-admin/ai-sdk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/local-admin/contest-script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    赛事脚本
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    普通用户
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            普通用户
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user/ordinary-user/manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    手册
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      提供给前端的API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      提供给赛事脚本的API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      内部实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内部实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      整体架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      api
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contestscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      contestscript
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mq" class="md-nav__link">
+    <span class="md-ellipsis">
+      mq
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/THUAI-ssast/hiper-docs/edit/main/docs/dev/web.zh.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/THUAI-ssast/hiper-docs/raw/main/docs/dev/web.zh.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="web">Web</h1>
+<h2 id="api">提供给前端的API</h2>
+<p><a href="https://hiper-backend.apifox.cn">API文档</a></p>
+<p>使用 <code>Apifox</code> 实现 编写与部署API文档、调试API、简易 Mock、生成类型定义代码。</p>
+<h2 id="api_1">提供给赛事脚本的API</h2>
+<p><a href="/user/local-admin/contest-script.md">赛事脚本API</a></p>
+<p>若赛事管理员提交了有问题的赛事脚本，则可能导致一些破坏性结果。需尽可能降低这一风险。</p>
+<p>但仍相信赛事管理员不会故意提交有问题的赛事脚本，因此不轻易采取强制的限制措施。</p>
+<p>可能的破坏性结果：</p>
+<ol>
+<li>在短时间内创建了极大量对局，挤占了其他赛事的评测资源。</li>
+<li>执行无意义逻辑占用计算资源。</li>
+</ol>
+<h2 id="_1">内部实现</h2>
+<p>源码目录：<a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web">web</a></p>
+<h3 id="_2">整体架构</h3>
+<p>从 <a href="../arch/">架构</a> 部分抄过来 Web 部分与其他部分的关联：</p>
+<pre class="mermaid"><code>graph TD
+  Frontend --&gt; B
+    subgraph Web
+        B[Web API] --&gt; C[Service]
+        D[Contest Script] --&gt; C
+    C --&gt; D
+    end
+    C --&gt; MQ[Message Queue]
+    MQ --&gt; C
+    MQ --&gt; Worker
+    Worker --&gt; MQ
+    C --&gt; Data
+    subgraph Data
+        Cache
+        Database
+        File[File System]
+    end</code></pre>
+<p>在 Web 中增加一些模块封装与外部的交互，使得 <code>Service</code> 只需关注业务逻辑。</p>
+<p>如 添加 <code>package model</code> 专门解决数据存取、持久化、缓存等问题。提供访问数据的接口供业务逻辑使用，使 <code>Service</code> 与底层存储系统解耦（如不用管到底要不要缓存、存到数据库/Redis还是文件系统 等）。</p>
+<p>Web 部分的架构图（以下纯小写表示 package 名）：</p>
+<pre class="mermaid"><code>graph TD
+Frontend --&gt; api
+
+subgraph Web
+api --&gt; C[Service. 可进一步拆为其他packages]
+cs[contestscript] --&gt; C
+C --&gt; cs
+C --&gt; m[model]
+C --&gt; mq[mq. 有的用于发送消息, 有的用于接收消息]
+mq --&gt; C
+end
+
+m --&gt; Cache
+m --&gt; Database
+m --&gt; File
+mq --&gt; MQ[Message Queue]
+
+subgraph Data
+  Cache
+  Database
+  File[File System]
+end</code></pre>
+<p><code>Service</code> 提供<strong>「相对干净的业务逻辑」</strong>（如不应依赖 <code>gin</code>）。粒度拆分到足够细，方便组合使用。</p>
+<p>遵循 Go 项目的惯例，将 service 拆散平铺到其他目录，合理归类，于是并不需要单独的 service目录。</p>
+<p>每块业务逻辑对应一个 package，如 <a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web/mail"><code>package mail</code></a>、<a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web/user"><code>package user</code></a>。</p>
+<h3 id="config"><a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web/config">config</a></h3>
+<p><code>config</code> 读取配置文件，将配置信息提供给其他模块使用。</p>
+<p>技术选型： <a href="https://github.com/spf13/viper">github.com/spf13/viper</a></p>
+<p>使用 <code>toml</code> 格式的配置文件，同时支持环境变量。配置文件支持热重载。</p>
+<h3 id="api_2"><a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web/api">api</a></h3>
+<p><code>api</code> 提供给前端的 API。</p>
+<p>技术选型：</p>
+<ul>
+<li>web framework: <a href="https://github.com/gin-gonic/gin">github.com/gin-gonic/gin</a></li>
+<li>auth: <a href="https://github.com/golang-jwt/jwt">github.com/golang-jwt/jwt</a></li>
+</ul>
+<h3 id="contestscript"><a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web/contestscript">contestscript</a></h3>
+<p><code>contestscript</code> 运行赛事脚本。将 Go 代码封装为 JavaScript 代码，供赛事脚本使用。</p>
+<p>技术选型：</p>
+<ul>
+<li><a href="https://github.com/dop251/goja">github.com/dop251/goja</a>. 功能挺全，性能也不错。</li>
+<li><a href="https://github.com/dop251/goja_nodejs">github.com/dop251/goja_nodejs</a></li>
+</ul>
+<p>维护2个 map，构成 赛事脚本运行环境 与 base contest 的双向映射。</p>
+<h3 id="model"><a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web/model">model</a></h3>
+<p><code>model</code> 解决数据存取、持久化、缓存等问题，提供访问数据的接口供业务逻辑使用。</p>
+<p>技术选型：</p>
+<ul>
+<li>db: PostgreSQL</li>
+<li>cache: Redis</li>
+<li>orm: <a href="https://gorm.io/gorm">gorm.io/gorm</a></li>
+<li>postgres driver: <a href="https://gorm.io/driver/postgres">gorm.io/driver/postgres</a></li>
+<li>redis client: <a href="https://github.com/go-redis/redis/v9">github.com/go-redis/redis/v9</a> </li>
+</ul>
+<p>数据模型设计的核心思路略如下：</p>
+<p>中心的表：<code>user</code>, <code>game</code>, <code>contest</code>。由于 <code>game</code> 内置一个赛事，故与 <code>contest</code> 有大部分字段是相同的，这部分抽象出 <code>base contest</code>，这样 <code>ai</code>、<code>match</code>、<code>sdk</code> 等都只需与 <code>base contest</code> 关联即可。</p>
+<p>约定 <code>game</code>, <code>contest</code> 的 ID 与它们对应的 <code>base contest</code> 的 ID 相同，这样无需额外的字段来关联它们。</p>
+<p><code>contestant</code> 记录 <code>user</code> 参加 <code>base contest</code> 的情况。</p>
+<p><code>base contest</code> 内部有 <code>ai</code>, <code>match</code>, <code>sdk</code> 这些东西。这些东西需编号，使用全局编号即可。</p>
+<blockquote>
+<p>本打算在每场赛事中独立编号，但发现这样明显提高了实现难度，而且也没有什么必要，便还是只使用全局编号。</p>
+</blockquote>
+<p>文件系统中的目录结构粗略示例如下（<code>src</code> 表示文件名会被统一改为 <code>src</code>，但后缀名不变；源码可能会被构建产生可执行文件，这些文件放在哪由用户提交的 <code>Dockerfile</code> 决定）：</p>
+<div class="highlight"><pre><span></span><code>var/hiper/
+├── ais
+│   ├── 1
+│   │   └── src
+│   └── 2
+│       └── src
+├── games
+│   └── 1
+│       └── game_logic
+│           └── src
+├── matches
+│   └── 1
+│       ├── player_0.log
+│       ├── player_1.log
+│       ├── player_2.log
+│       └── replay.json
+└── sdks
+    └── 1
+        └── src
+</code></pre></div>
+<p>每个文件内的代码的组织粗略如下：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ...</span>
+
+<span class="c1">// 数据模型定义</span>
+
+<span class="c1">// 主体的 CRUD</span>
+
+<span class="c1">// associations CRUD</span>
+
+<span class="c1">// 一些特殊、非常规的操作</span>
+</code></pre></div>
+<h3 id="mq"><a href="https://github.com/THUAI-ssast/hiper-backend/tree/main/web/mq">mq</a></h3>
+<p><code>mq</code> 封装了消息队列的使用，提供发送、接收消息的接口供其他模块使用。</p>
+<p>技术选型：</p>
+<ul>
+<li>消息队列：Redis Stream</li>
+<li>client: <a href="https://github.com/go-redis/redis/v9">github.com/go-redis/redis/v9</a> </li>
+</ul>
+<p>消息队列接口见 <a href="../mq/">消息队列</a>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "content.action.edit"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/requirement/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/requirement/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/requirement/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/dev/arch/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/arch/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/arch/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/dev/dev-env-setup/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/dev-env-setup/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/dev-env-setup/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/dev/mq/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/mq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/mq/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/dev/web/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/web/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/web/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/dev/worker/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/worker/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/worker/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/user/local-admin/ai-sdk/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/local-admin/ai-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/ai-sdk/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/user/local-admin/contest-script/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/local-admin/contest-script/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/contest-script/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/user/local-admin/game-logic/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/local-admin/game-logic/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/game-logic/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/user/ordinary-user/manual/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/ordinary-user/manual/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/ordinary-user/manual/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/requirement/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/requirement/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/requirement/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/dev/arch/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/arch/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/arch/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/dev/dev-env-setup/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/dev-env-setup/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/dev-env-setup/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/dev/mq/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/mq/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/mq/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/dev/web/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/web/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/web/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/dev/worker/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/dev/worker/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/dev/worker/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/ai-sdk/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/ai-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/local-admin/ai-sdk/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/contest-script/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/contest-script/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/local-admin/contest-script/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/game-logic/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/local-admin/game-logic/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/local-admin/game-logic/"/>
+    </url>
+    <url>
+        <loc>https://thuai-ssast.github.io/hiper-docs/en/user/ordinary-user/manual/</loc>
+        <lastmod>2024-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://thuai-ssast.github.io/hiper-docs/en/user/ordinary-user/manual/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://thuai-ssast.github.io/hiper-docs/user/ordinary-user/manual/"/>
+    </url>
+</urlset>
